@@ -15,6 +15,10 @@
 // Account for TIES by re-playing the round.
 
 const CHOICES = ["Rock", "Paper", "Scissors"];
+let pScore = 0
+let cScore = 0
+
+
 
 function getComputerChoice(arr) {
     arr = CHOICES
@@ -34,24 +38,32 @@ function playRound(playerSelection, computerSelection) {
     playerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1);
 
     if (playerSelection === computerSelection) {
-        return("TIE"); // todo: Need to update to replay the game ONCE as well as reporting the tie
+        playRound();
+        return(`Tie! You and the computer both chose ${playerSelection}!`);
+        // todo: Need to update to replay the game ONCE as well as reporting the tie
     }
 
     else if ((playerSelection === "Rock" && computerSelection === "Scissors") ||
         (playerSelection === "Scissors" && computerSelection === "Paper") ||
         (playerSelection === "Paper" && computerSelection === "Rock")) {
-        return("WIN");
+        pScore++;
+        return(`You Win! You chose ${playerSelection} and the computer chose ${computerSelection}`);
     }
 
     else if ((playerSelection === "Rock" && computerSelection === "Paper") ||
         (playerSelection === "Scissors" && computerSelection === "Rock") ||
         (playerSelection === "Paper" && computerSelection === "Scissors")) {
-        return("LOSE");
+        cScore++;
+        return(`You Lose! You chose ${playerSelection} and the computer chose ${computerSelection}`);
     }
 
     else return ("No match, something has gone terribly wrong!");
 }
 
-const playerSelection = "Rock";
+
 const computerSelection = getComputerChoice();
+
+
 console.log(playRound(playerSelection, computerSelection));
+
+playerSelection = prompt("Rock, Paper, or Scissors?"); // todo: This prompt is not being called. Contr flow?
