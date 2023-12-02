@@ -17,7 +17,7 @@
 const CHOICES = ["Rock", "Paper", "Scissors"];
 let pScore = 0
 let cScore = 0
-
+playerSelection = prompt("Rock, Paper, or Scissors?"); // todo: This prompt is not being called. Contr flow?
 
 
 function getComputerChoice(arr) {
@@ -60,10 +60,6 @@ function playRound(playerSelection, computerSelection) {
     else return ("No match, something has gone terribly wrong!");
 }
 
-
 const computerSelection = getComputerChoice();
 
-
 console.log(playRound(playerSelection, computerSelection));
-
-playerSelection = prompt("Rock, Paper, or Scissors?"); // todo: This prompt is not being called. Contr flow?
