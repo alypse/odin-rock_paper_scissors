@@ -16,12 +16,16 @@ const game = () => {
 
     function playRound(playerSelection, computerSelection) {
         const roundResult = document.querySelector(".resultsView");
+        const playerHand = document.querySelector(".playerChoice");
+        const computerHand = document.querySelector(".computerChoice");
         const playerScoreboard = document.querySelector(".playerScore");
         const computerScoreboard = document.querySelector(".computerScore");
         const gameStatus = document.querySelector(".selectionsView");
         getComputerChoice();
 
         if (playerSelection === computerSelection) {
+            playerHand.src=`/assets/${playerSelection}.png`;
+            computerHand.src=`/assets/${computerSelection}.png`;
             roundResult.textContent =`Tie! You and the computer both chose ${playerSelection}!`;
         }
 
@@ -30,6 +34,8 @@ const game = () => {
             (playerSelection === "Paper" && computerSelection === "Rock")) {
             pScore++;
             playerScoreboard.textContent = `${pScore}`;
+            playerHand.src=`/assets/${playerSelection}.png`;
+            computerHand.src=`/assets/${computerSelection}.png`;
             roundResult.textContent = `You Win! You chose ${playerSelection} and the computer chose ${computerSelection}`;
         }
 
@@ -38,6 +44,8 @@ const game = () => {
             (playerSelection === "Paper" && computerSelection === "Scissors")) {
             cScore++;
             computerScoreboard.textContent = `${cScore}`;
+            playerHand.src=`/assets/${playerSelection}.png`;
+            computerHand.src=`/assets/${computerSelection}.png`;
             roundResult.textContent = `You Lose! You chose ${playerSelection} and the computer chose ${computerSelection}`;
         }
         // Provide logging for arguments outside of the scope of the if statements. ie; case, types, etc.
