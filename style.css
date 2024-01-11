@@ -19,7 +19,6 @@ body {
     justify-content: center;
     align-items: center;
     color: #AF40FFFF;
-    /*border: red solid 2px;*/
 }
 
 .playerScoreboard, .computerScoreboard {
