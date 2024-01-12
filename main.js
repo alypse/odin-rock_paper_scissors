@@ -19,14 +19,14 @@ const game = () => {
         const gameStatus = document.querySelector(".selectionsView");
 
         if (playOutcome === "tie") {
-            playerHand.src = `/assets/${playerSelection}.png`;
-            computerHand.src = `/assets/${computerSelection}.png`;
+            playerHand.src = `assets/${playerSelection}.png`;
+            computerHand.src = `assets/${computerSelection}.png`;
             roundResult.textContent = `Tie! You and the computer both chose ${playerSelection}!`;
         }
         if (playOutcome === "computer_win") {
             computerScoreboard.textContent = `${cScore}`;
-            playerHand.src = `/assets/${playerSelection}.png`;
-            computerHand.src = `/assets/${computerSelection}.png`;
+            playerHand.src = `assets/${playerSelection}.png`;
+            computerHand.src = `assets/${computerSelection}.png`;
             roundResult.textContent = `You Lose! You chose ${playerSelection} and the computer chose ${computerSelection}`;
             if (cScore >= 5) {
                 gameStatus.textContent = "Computer wins the game!"
@@ -34,8 +34,8 @@ const game = () => {
         }
         if (playOutcome === "player_win") {
             playerScoreboard.textContent = `${pScore}`;
-            playerHand.src = `/assets/${playerSelection}.png`;
-            computerHand.src = `/assets/${computerSelection}.png`;
+            playerHand.src = `assets/${playerSelection}.png`;
+            computerHand.src = `assets/${computerSelection}.png`;
             roundResult.textContent = `You Win! You chose ${playerSelection} and the computer chose ${computerSelection}`;
             if (pScore >= 5) {
                 gameStatus.textContent = "You win the game!"
