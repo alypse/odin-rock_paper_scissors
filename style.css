@@ -18,6 +18,7 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    padding-bottom: 20px;
     color: #AF40FFFF;
 }
 
@@ -26,6 +27,7 @@ body {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    font-size: 36px;
 }
 
 .textbox {
